@@ -1,0 +1,55 @@
+# Project: 9teste
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = aposta.o armazenamento.o AVL.o baralho.o combinacoes.o fila.o jogadores.o main.o mesa.o rodada.o
+LINKOBJ  = aposta.o armazenamento.o AVL.o baralho.o combinacoes.o fila.o jogadores.o main.o mesa.o rodada.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 9teste.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+aposta.o: aposta.c
+	$(CC) -c aposta.c -o aposta.o $(CFLAGS)
+
+armazenamento.o: armazenamento.c
+	$(CC) -c armazenamento.c -o armazenamento.o $(CFLAGS)
+
+AVL.o: AVL.c
+	$(CC) -c AVL.c -o AVL.o $(CFLAGS)
+
+baralho.o: baralho.c
+	$(CC) -c baralho.c -o baralho.o $(CFLAGS)
+
+combinacoes.o: combinacoes.c
+	$(CC) -c combinacoes.c -o combinacoes.o $(CFLAGS)
+
+fila.o: fila.c
+	$(CC) -c fila.c -o fila.o $(CFLAGS)
+
+jogadores.o: jogadores.c
+	$(CC) -c jogadores.c -o jogadores.o $(CFLAGS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+mesa.o: mesa.c
+	$(CC) -c mesa.c -o mesa.o $(CFLAGS)
+
+rodada.o: rodada.c
+	$(CC) -c rodada.c -o rodada.o $(CFLAGS)
